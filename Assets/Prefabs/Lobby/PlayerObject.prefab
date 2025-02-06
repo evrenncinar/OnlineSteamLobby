@@ -64,8 +64,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncDirection: 0
   syncMode: 0
-  syncInterval: 0
+  syncInterval: 0.1
   _connectionID: 0
   _playerIDNumber: 0
   _playerSteamID: 0
   _playerName: 
+  _playerReady: 0

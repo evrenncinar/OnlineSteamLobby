@@ -426,7 +426,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1540600475
+--- !u!1 &1716725325
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -434,11 +434,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1540600480}
-  - component: {fileID: 1540600479}
-  - component: {fileID: 1540600478}
-  - component: {fileID: 1540600477}
-  - component: {fileID: 1540600476}
+  - component: {fileID: 1716725330}
+  - component: {fileID: 1716725329}
+  - component: {fileID: 1716725328}
+  - component: {fileID: 1716725327}
+  - component: {fileID: 1716725326}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -446,38 +446,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1540600476
+--- !u!114 &1716725326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540600475}
+  m_GameObject: {fileID: 1716725325}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63d7fde6ebdfc8b4b8aedb61aafac328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentLobbyID: 0
---- !u!114 &1540600477
+--- !u!114 &1716725327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540600475}
+  m_GameObject: {fileID: 1716725325}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1540600478
+--- !u!114 &1716725328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540600475}
+  m_GameObject: {fileID: 1716725325}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6e55fca1f4e4844593a3dd65a3ecb39, type: 3}
@@ -487,13 +487,13 @@ MonoBehaviour:
   Timeout: 25
   AllowSteamRelay: 1
   UseNextGenSteamNetworking: 1
---- !u!114 &1540600479
+--- !u!114 &1716725329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540600475}
+  m_GameObject: {fileID: 1716725325}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5732140dfc1650d42b763a8936f255fa, type: 3}
@@ -501,13 +501,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
   runInBackground: 1
-  headlessStartMode: 0
-  editorAutoStart: 0
-  sendRate: 60
+  headlessStartMode: 1
+  editorAutoStart: 1
+  sendRate: 30
   offlineScene: Assets/Scenes/MainMenu.unity
   onlineScene: Assets/Scenes/Lobby.unity
   offlineSceneLoadDelay: 0
-  transport: {fileID: 1540600478}
+  transport: {fileID: 1716725328}
   networkAddress: localhost
   maxConnections: 8
   disconnectInactiveConnections: 0
@@ -518,7 +518,7 @@ MonoBehaviour:
   playerSpawnMethod: 0
   spawnPrefabs:
   - {fileID: 3003894064773199835, guid: b5149721a423b37488e2adc25567b345, type: 3}
-  exceptionsDisconnect: 1
+  exceptionsDisconnect: 0
   snapshotSettings:
     bufferTimeMultiplier: 2
     bufferLimit: 32
@@ -534,13 +534,13 @@ MonoBehaviour:
   evaluationInterval: 3
   timeInterpolationGui: 0
   GamePlayerPrefab: {fileID: 3248708279435935470, guid: b5149721a423b37488e2adc25567b345, type: 3}
---- !u!4 &1540600480
+--- !u!4 &1716725330
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540600475}
+  m_GameObject: {fileID: 1716725325}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.2900152, y: 1.3124247, z: 0.5153694}
@@ -883,4 +883,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 2006184707}
   - {fileID: 2006921532}
-  - {fileID: 1540600480}
+  - {fileID: 1716725330}

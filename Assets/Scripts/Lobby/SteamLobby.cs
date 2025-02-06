@@ -22,7 +22,7 @@ public class SteamLobby : MonoBehaviour
    void Start()
    {
         if(!SteamManager.Initialized) { return; }
-        if(instance == null ) { instance = this; }
+        MakeInstance();
         manager = GetComponent<CustomNetworkManager>();
         lobbyCreated = Callback<LobbyCreated_t>.Create(OnLobbyCreated);
         JoinRequest = Callback<GameLobbyJoinRequested_t>.Create(OnJoinRequest);
@@ -30,16 +30,22 @@ public class SteamLobby : MonoBehaviour
         
    }
 
+    void MakeInstance()
+    {
+        if (instance == null)
+            instance = this;
+    }
+
    public void JoinLobby(CSteamID _lobbyID)
    {
-    try
-    {
-        SteamMatchmaking.JoinLobby(_lobbyID);
-    }
-    catch (System.Exception)
-    {
-        print("Böyle bir Lobby kodu yok");
-    }
+        try
+        {
+            SteamMatchmaking.JoinLobby(_lobbyID);
+        }
+        catch (System.Exception)
+        {
+            print("Böyle bir Lobby kodu yok");
+        }
    }
    
 

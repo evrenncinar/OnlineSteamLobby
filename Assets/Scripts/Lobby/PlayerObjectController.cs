@@ -8,6 +8,7 @@ public class PlayerObjectController : NetworkBehaviour
     [SyncVar] public int _connectionID;
     [SyncVar] public int _playerIDNumber;
     [SyncVar] public ulong _playerSteamID;
+    [SyncVar] public bool IsGameLeader = false;
     [SyncVar(hook = nameof(PlayerNameUpdate))] public string _playerName;
     [SyncVar(hook = nameof(PlayerReadyUpdate))] public bool _playerReady;
 
@@ -23,6 +24,11 @@ public class PlayerObjectController : NetworkBehaviour
             }
             return manager = NetworkManager.singleton as CustomNetworkManager;
         }
+    }
+
+    private void Start() 
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void PlayerReadyUpdate(bool oldValue, bool newValue)
@@ -68,9 +74,9 @@ public class PlayerObjectController : NetworkBehaviour
 
     public override void OnStopClient()
     {
+        ChatManager.instance.SendChatMessage("Oyuncu çıkış yaptı", _playerName, "red");
         Manager.GamePlayers.Remove(this);
         LobbyController.instance.UpdatePlayerList();
-        ChatManager.instance.SendChatMessage("Oyuncu çıkış yaptı", _playerName, "red");
     }
 
     [Command]
@@ -90,4 +96,31 @@ public class PlayerObjectController : NetworkBehaviour
             LobbyController.instance.UpdatePlayerList();
         }
     }
+
+    public void QuitLobby()
+    {
+        if(isOwned)
+        {
+            if(IsGameLeader)
+            {
+                Manager.StopHost();
+            }
+            else
+            {
+                Manager.StopClient();
+            }
+        }
+    }
+
+    private void OnDestroy() 
+    {
+        if(isOwned)
+        {
+            LobbyController.instance.RemovePlayerItem();
+            SteamMatchmaking.LeaveLobby((CSteamID)LobbyController.instance._currentLobbyID);
+        }
+    }
+
+    
 }
+

@@ -211,4 +211,9 @@ public class LobbyController : MonoBehaviour
     {
         GUIUtility.systemCopyBuffer = _currentLobbyID.ToString();
     }
+
+    public void PlayerQuitLobby()
+    {
+        _localPlayerObjectController.QuitLobby();
+    }
 }
